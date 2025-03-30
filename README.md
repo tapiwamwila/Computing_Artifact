@@ -34,7 +34,6 @@ Follow these steps to set up the project on your local machine:
    ```bash
    pip install torch torch_geometric pandas numpy scikit-learn seaborn matplotlib folium shap networkx tqdm numba gcsfs
    ```  
-   *Note:* For PyTorch and torch-geometric, you may need to follow their official installation instructions (especially if using CUDA for GPU acceleration).
 
 4. **Download the CAMELS dataset**:  
    This project uses the **CAMELS (Catchment Attributes and Meteorology for Large-sample Studies)** dataset. Due to its size, the data is not included in the repo. Download the CAMELS US dataset from the [NCAR/UCAR data portal](https://ral.ucar.edu/solutions/products/camels) or the [GDEX archive](https://gdex.ucar.edu/dataset/) – specifically, you will need the time series data (`basin_timeseries_v1p2_metForcing_obsFlow.zip`). Extract the dataset on your system, which should yield a directory (for example, `basin_timeseries_v1p2_metForcing_obsFlow` containing subfolders for meteorological forcing and streamflow data).
@@ -48,8 +47,6 @@ Follow these steps to set up the project on your local machine:
 - **Catchment attributes**: Static attributes of each basin (soil properties, land cover, elevation, climate indices, etc.), which can be useful for hydrologic modeling (though in this project the focus is on time series data and the LSTM model does not explicitly use these static features).
 
 In total, CAMELS includes data for 671 basins in the contiguous United States, with records spanning multiple decades (most basins have data from the 1980s-2000s). This project uses the time series data from CAMELS to train the LSTM. Typically, the data is split into a training period and a testing (validation) period. For example, one might train on data from 1980-2000 and test on 2000-2010 for a given basin, to evaluate how well the model predicts unseen data.
-
-*Please ensure you have downloaded and extracted the CAMELS data and configured the paths as described above before training the model.* The repository does not include the dataset due to size and licensing constraints.
 
 ## How to Train and Evaluate the Model
 
@@ -69,9 +66,6 @@ You can train and evaluate the LSTM model using either the provided Jupyter note
     - Training the LSTM on the pooled multi-basin data. This can demonstrate the model’s ability to learn a general representation across different catchments.
     - Evaluating the model on one or more basins (possibly including basins that were not in the training set, to test generalization).
     - Computing metrics (NSE, MSE) for the evaluation and plotting results for sample basins.
-    - (Optional) This notebook may also include analyses of errors across basins or other visualizations to compare performance between basins.
-
-  *Using the notebooks:* Make sure to run all prior setup steps (install packages, download data, set paths) before executing the notebooks. Each notebook is meant to be run in order, and you can modify parameters (like basin IDs, training epochs, etc.) to experiment. The notebooks provide inline documentation and plots to help interpret the results.
 
 ## Acknowledgements and References
 
