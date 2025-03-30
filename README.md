@@ -1,13 +1,13 @@
 # LSTM Streamflow Prediction
 
-This repository contains a computing artifact focusing on using a Long Short-Term Memory (LSTM) neural network to predict daily streamflow (river discharge) in river basins. The model is trained and evaluated on the CAMELS hydrological dataset, which provides meteorological forcings and streamflow observations for numerous catchments. The goal is to explore the performance of LSTM-based models in a hydrological context, and compare the outcomes of training on a single basin versus multiple basins.
+This repository contains a computing artifact focusing on using a Long Short-Term Memory (LSTM) neural network to predict daily streamflow (river discharge) in river basins. The model is trained and evaluated on the [CAMELS](https://ral.ucar.edu/solutions/products/camels) hydrological dataset, which provides meteorological forcings and streamflow observations for 671 catchments in the United States. The goal is to explore the performance of LSTM-based models in a hydrological context, and compare the outcomes of training on a single basin versus multiple basins.
 
 ## Key Features and Goals
 
 - **LSTM Model for Streamflow**: Implements a single-layer LSTM neural network (using PyTorch) to model rainfall-runoff processes and predict daily streamflow from meteorological inputs.
 - **Single vs. Multiple Basin Training**: The project evaluates two scenarios:
-  - Single Basin Model: Train and test the model on data from one specific river basin (catchment).
-  - Multiple Basin Model: Train a generalized model using data from multiple basins to assess its broader applicability and performance across different catchments.
+  - Single Basin Model: Train and test the model on data from one specific river basin by use of a basin ID.
+  - Multiple Basin Model: Train a generalized model using data from multiple basins to assess its broader applicability.
 - **Hydrological Dataset (CAMELS)**: Utilizes the CAMELS dataset, which includes daily meteorological inputs (precipitation, temperature, etc.) and observed streamflow for hundreds of basins. This provides a rich, real-world dataset for training and evaluating the model.
 - **Model Evaluation**: Performance is measured using metrics like Nash–Sutcliffe Efficiency (NSE) and Mean Squared Error (MSE), providing insight into predictive accuracy. NSE is a standard efficiency coefficient in hydrology (NSE = 1 is perfect, NSE > 0.75 is typically considered a very good model.
 
@@ -40,7 +40,7 @@ Follow these steps to set up the project on your local machine:
 
 ## Dataset: CAMELS Overview
 
-**CAMELS (Catchment Attributes and Meteorology for Large-sample Studies)** is a large-sample hydrology dataset covering hundreds of basins across the United States. It provides a wealth of data for each basin, including: 
+**CAMELS (Catchment Attributes and Meteorology for Large-sample Studies)** is a large-sample hydrology dataset covering hundreds of basins across the United States. It provides data for each basin, including: 
 
 - **Meteorological forcings**: Daily time series of precipitation, temperature (min/max), solar radiation, etc., often derived from the Daymet dataset or similar sources.
 - **Streamflow observations**: Daily discharge measurements for each basin, typically provided by USGS gauges (converted to runoff in mm/day in the CAMELS data files).
