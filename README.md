@@ -21,10 +21,10 @@ Follow these steps to set up the project on your local machine:
    cd Computing_Artifact
    ```
 
-2. **Create a Python environment** (optional but recommended):  
+2. **Create environment**:  
    Use Python 3.x. You can create a virtual environment using venv or Conda. For example, with `venv` on Linux/MacOS:  
    ```bash
-   python3 -m venv venv
+   conda env create -f requirement.yml
    source venv/bin/activate
    ```
    
