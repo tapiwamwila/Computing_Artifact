@@ -13,11 +13,11 @@ import sys
 from pathlib import Path
 
 #------------- globally accessing the dataset
-FILE_SYSTEM = gcsfs.core.GCSFileSystem(requester_pays=True)
+# FILE_SYSTEM = gcsfs.core.GCSFileSystem(requester_pays=True)
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu") # This line checks if GPU is available
-forcing_path = "/Users/mpgrad/Desktop/PHD_Research/camels-20240903T2000Z"
+# forcing_path = "/Users/mpgrad/Desktop/TapiwaComp_Exam/Artifact/Computing_Artifact/data"
 
-CAMELS_ROOT = Path(forcing_path+"/basin_timeseries_v1p2_metForcing_obsFlow/basin_dataset_public_v1p2")#specifies the path of the CAMELS
+CAMELS_ROOT = Path("/Users/mpgrad/Desktop/TapiwaComp_Exam/Artifact/Computing_Artifact/data")#specifies the path of the CAMELS
 def load_forcing(basin: str) -> Tuple[pd.DataFrame, int]:
     """Load the meteorological forcing data of a specific basin.
 
@@ -25,7 +25,7 @@ def load_forcing(basin: str) -> Tuple[pd.DataFrame, int]:
     :return: pd.DataFrame containing the meteorological forcing data and the area of the basin as integer.
     """
     # Root directory of meteorological forcings
-    forcing_path = os.path.join(CAMELS_ROOT, 'basin_mean_forcing', 'daymet')
+    forcing_path = os.path.join(CAMELS_ROOT, 'daymet')
 
     # path of forcing file
     files = list(glob.glob(os.path.join(forcing_path, '**', f'{basin}_*.txt'), recursive=True))
