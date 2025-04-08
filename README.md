@@ -38,6 +38,8 @@ Follow these steps to set up the project on your local machine:
 4. **Download the CAMELS dataset**:  
    This project uses the **CAMELS (Catchment Attributes and Meteorology for Large-sample Studies)** dataset. Due to its size, the data is not included in the repo. Download the CAMELS US dataset from the [NCAR/UCAR data portal](https://ral.ucar.edu/solutions/products/camels) or the [GDEX archive](https://gdex.ucar.edu/dataset/) – specifically, you will need the time series data (`basin_timeseries_v1p2_metForcing_obsFlow.zip`). Extract the dataset on your system, which should yield a directory (for example, `basin_timeseries_v1p2_metForcing_obsFlow` containing subfolders for meteorological forcing and streamflow data).
 
+5. **Note: Update the paths in the `data_loader` and noteboooks to your local machine**
+
 ## Dataset: CAMELS Overview
 
 **CAMELS (Catchment Attributes and Meteorology for Large-sample Studies)** is a large-sample hydrology dataset covering hundreds of basins across the United States. It provides data for each basin, including: 
