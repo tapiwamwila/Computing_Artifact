@@ -9,6 +9,7 @@ dependencies:
   - scikit-learn
   - pytorch
   - numba
+  - jupyterlab
   - tqdm
   - gcsfs
   - seaborn
