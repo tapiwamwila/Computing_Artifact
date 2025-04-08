@@ -25,7 +25,7 @@ Follow these steps to set up the project on your local machine:
    Use Python 3.x. You can create a virtual environment using venv or Conda. For example, with `venv` on Linux/MacOS:  
    ```bash
    conda env create -f requirement.yml
-   source venv/bin/activate
+   conda activate comp_env
    ```
    
 3. **Install required packages**:  
